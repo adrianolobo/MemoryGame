@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+  <ui:VisualElement name="screen" class="screen">
+    <Style src="USS.uss" />
+    <ui:VisualElement class="menu-header">
+      <ui:Button class="start-btn" text="START" />
+      <ui:Label class="score-label" text="Score: 0" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>
