@@ -1,5 +1,5 @@
-﻿* {
-    -unity-font: url('/Assets/Fonts/Teko-Regular.ttf');
+﻿:root {
+    -unity-font: url('/Assets/Fonts/Montserrat-Light.ttf');
     font-size: 24px;
 }
 
@@ -11,27 +11,29 @@
     justify-content: center;
 }
 
-
-.menu-header {
-    width: 100%;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.10);
-    justify-content: space-around;
-    align-items: center;
+.score-container {
     position: absolute;
+    top: 20%;
     flex-direction: row;
-    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-value {
+    margin-left: 10px;
+}
+
+.start-container {
+    position: absolute;
+    bottom: 20%;
 }
 
 .start-btn {
-    padding: 0 50px;
-    width: auto;
-    height: 70%;
-    background-color: rgb(103, 89, 214);
-    border: 0;
+    padding: 10px 30px;
+    background-color: #9bb1e2;
+    border-radius: 5px;
 }
 
-.score-label {
-    font-size: 24px;
-    color: red;
+.hide {
+    display: none;
 }

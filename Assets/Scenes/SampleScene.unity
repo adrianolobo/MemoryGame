@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 813322965}
   - component: {fileID: 813322967}
   m_Layer: 0
-  m_Name: Score
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1053,6 +1053,7 @@ MonoBehaviour:
   greenButton: {fileID: 1888552940}
   yellowButton: {fileID: 936344596}
   blueButton: {fileID: 1805978651}
+  ui: {fileID: 813322965}
 --- !u!4 &2147092408
 Transform:
   m_ObjectHideFlags: 0

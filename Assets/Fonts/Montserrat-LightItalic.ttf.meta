@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb7751de9f5bb274fa2e0198c03b4a3d
+guid: 71aad817c69c28444ad8970c6f74f08c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,14 +8,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Teko
   fontNames:
-  - Teko
+  - Montserrat
   fallbackFontReferences:
-  - {fileID: 12800000, guid: f3779f90ca0d59b409849d6caca59094, type: 3}
-  - {fileID: 12800000, guid: 4a22beb2269e6df4dba0e4d2192702ef, type: 3}
-  - {fileID: 12800000, guid: b98aed9a81a1bfd4ca863ce22f99dcaa, type: 3}
-  - {fileID: 12800000, guid: 587f582ca4575a846889542d445ad6d1, type: 3}
+  - {fileID: 12800000, guid: 01ccf7e5da706a447b8396decdfebd7a, type: 3}
+  - {fileID: 12800000, guid: 7137b6666c4e5ad4fa865779eb3203c8, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

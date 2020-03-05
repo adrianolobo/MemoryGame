@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.UIElements.Runtime;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,9 +20,40 @@ public class GameManager : MonoBehaviour
 
     private List<SimonButton> buttonsSequence = new List<SimonButton>();
     private List<SimonButton> playerButtonsSequence;
+
+    public PanelRenderer ui;
+
+    private Button startBtn;
+    private Label scoreValue;
+
+    private void OnEnable()
+    {
+        ui.postUxmlReload = BindUI;
+    }
+
+    private IEnumerable<Object> BindUI()
+    {
+        var root = ui.visualTree;
+        startBtn = root.Q<Button>("start-btn");
+        startBtn.clickable.clicked += () =>
+        {
+            SetScore(0);
+            Play();
+            startBtn.AddToClassList("hide");
+        };
+
+        scoreValue = root.Q<Label>("score-value");
+        return null;
+    }
+
+    private void ShowStartBtn()
+    {
+        startBtn.RemoveFromClassList("hide");
+    }
     // Start is called before the first frame update
     void Start()
     {
+        GameEvents.current.BlockUserInput();
         SimonRedButton = redButton.GetComponent<SimonButton>();
         SimonGreenButton = greenButton.GetComponent<SimonButton>();
         SimonYellowButton = yellowButton.GetComponent<SimonButton>();
@@ -29,7 +62,6 @@ public class GameManager : MonoBehaviour
         GameEvents.current.onButtonPressed += onButtonPressed;
 
         allButtons = new SimonButton[4] { SimonRedButton, SimonGreenButton, SimonBlueButton, SimonYellowButton };
-        Play();
     }
 
     void Play()
@@ -40,10 +72,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PlayButtonsSequence());
     }
 
+    private void SetScore(int value)
+    {
+        scoreValue.text = value.ToString();
+    }
+
     void GameOver()
     {
+        GameEvents.current.BlockUserInput();
         buttonsSequence = new List<SimonButton>();
-        Play();
+        ShowStartBtn();
     }
 
     IEnumerator PlayButtonsSequence()
@@ -75,6 +113,7 @@ public class GameManager : MonoBehaviour
         }
         if (playerButtonsSequence.Count == 0)
         {
+            SetScore(buttonsSequence.Count);
             Play();
         }
     }
