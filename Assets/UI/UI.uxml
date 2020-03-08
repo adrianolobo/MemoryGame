@@ -3,11 +3,18 @@
   <ui:VisualElement name="screen" class="screen">
     <Style src="USS.uss" />
     <ui:VisualElement class="score-container">
-      <ui:Label class ="score-label" text="Score: " />
-      <ui:Label class ="score-value" name="score-value" text="0" />
+      <ui:VisualElement class="high-score-container">
+        <ui:Label class ="score-label" name="high-score" text="High Score: 0" />
+      </ui:VisualElement>
+      <ui:VisualElement class="current-score-container">
+        <ui:Label class ="score-label" name="current-score" text="Score: 0" />
+      </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement class="start-container">
-      <ui:Button class="start-btn" name="start-btn" text="Start "/>
+      <ui:Button class="start-btn btn" name="start-btn" text="Start "/>
+    </ui:VisualElement>
+    <ui:VisualElement class="close-container">
+      <ui:Button class="close-btn btn" name="close-btn" text="Close"/>
     </ui:VisualElement>
   </ui:VisualElement>
 </ui:UXML>

@@ -11,29 +11,73 @@
     justify-content: center;
 }
 
+.screen.in-game .start-container,
+.screen.in-game .close-container {
+    display: none;
+}
+
+.screen.in-game .high-score-container {
+    opacity: 0;
+}
+
 .score-container {
     position: absolute;
-    top: 20%;
+    top: 18%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.current-score-container,
+.high-score-container {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.high-score-container {
+    margin-bottom: 10px;
+}
+
+.score-label {
+    width: 100%;
+    -unity-text-align: middle-center;
 }
 
 .score-value {
-    margin-left: 10px;
+    position: relative;
+    left: 10px;
 }
 
 .start-container {
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
 }
+
 
 .start-btn {
     padding: 10px 30px;
-    background-color: #9bb1e2;
+}
+
+.btn {
+    color: #fff;
+    background-color: #49599a;
     border-radius: 5px;
 }
 
-.hide {
-    display: none;
+
+.close-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.close-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: #a4a4a4;
+    color: #000;
 }

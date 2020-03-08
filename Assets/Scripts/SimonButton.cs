@@ -6,10 +6,13 @@ public class SimonButton : MonoBehaviour
 {
     public Sprite SpriteLight;
     public Sprite SpriteDark;
+    public AudioClip buttonSound;
     bool isEnabled = false;
-    // Start is called before the first frame update
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = this.gameObject.AddComponent<AudioSource>();
         GameEvents.current.onAllowUserInput += Enable;
         GameEvents.current.onBlockUserInput += Disable;
         this.SetDark();
@@ -40,6 +43,7 @@ public class SimonButton : MonoBehaviour
 
     public void SetLight()
     {
+        audioSource.PlayOneShot(buttonSound);
         this.SetSprite(SpriteLight);
     }
     
